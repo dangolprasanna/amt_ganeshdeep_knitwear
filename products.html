@@ -41,25 +41,27 @@
         media="print" onload="this.media='all'">
 
     <!-- Preload critical CSS -->
-    <link rel="preload" href="style.css" as="style">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preload" href="color.css" as="style">
-    <link rel="stylesheet" href="color.css">
-    <link rel="preload" href="mail.css" as="style">
-    <link rel="stylesheet" href="mail.css">
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preload" href="css/color.css" as="style">
+    <link rel="stylesheet" href="css/color.css">
+    <link rel="preload" href="css/mail.css" as="style">
+    <link rel="stylesheet" href="css/mail.css">
+    <link rel="preload" href="css/products.css" as="style">
+    <link rel="stylesheet" href="css/products.css">
 
     <!-- Structured Data (Organization) -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Ganeshdeep Knitwear",
-      "url": "https://ganeshdeep.com/",
-      "logo": "https://ganeshdeep.com/img/bg-img/LogoJ.png",
-      "sameAs": [
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Ganeshdeep Knitwear",
+    "url": "https://ganeshdeep.com/",
+    "logo": "https://ganeshdeep.com/img/bg-img/LogoJ.png",
+    "sameAs": [
         "https://www.facebook.com/ganeshdeepknitwear",
         "https://www.instagram.com/ganeshdeepknitwear"
-      ]
+    ]
     }
     </script>
 
@@ -768,15 +770,6 @@
         </button>
     </div>
 
-    <!-- Global Color Picker Dropdown -->
-    <!-- <div id="colorPickerDropdown" class="shadcn-dropdown" style="position:absolute; top:24px; right:32px;">
-        <button id="colorPickerDropdownBtn" class="shadcn-dropdown-btn" type="button">
-            <span id="colorPickerDropdownSelected" class="shadcn-dropdown-selected"></span>
-            <svg width="18" height="18" style="margin-left:8px;" viewBox="0 0 20 20"><path d="M7 7l3 3 3-3" stroke="#333" stroke-width="2" fill="none" fill-rule="evenodd"/></svg>
-        </button>
-        <div id="colorPickerDropdownList" class="shadcn-dropdown-list" style="display:none;"></div>
-    </div> -->
-
     <!-- Cart Modal -->
     <div id="cartModal">
         <div class="cart-header">
@@ -806,25 +799,25 @@
                 <div style="margin-bottom:18px;">
                     <label for="buyerName" style="font-weight:500;display:block;margin-bottom:6px;color:#444;">Full
                         Name</label>
-                    <input id="buyerName" name="buyerName" type="text" required
+                    <input id="buyerName" name="name" type="text" required
                         style="width:100%;padding:10px 14px;border:1px solid #ddd;border-radius:8px;margin-top:4px;font-size:1em;transition:border-color 0.2s;box-sizing:border-box;">
                 </div>
                 <div style="margin-bottom:18px;">
                     <label for="buyerEmail" style="font-weight:500;display:block;margin-bottom:6px;color:#444;">Email
                         Address</label>
-                    <input id="buyerEmail" name="buyerEmail" type="email" required
+                    <input id="buyerEmail" name="email" type="email" required
                         style="width:100%;padding:10px 14px;border:1px solid #ddd;border-radius:8px;margin-top:4px;font-size:1em;transition:border-color 0.2s;box-sizing:border-box;">
                 </div>
                 <div style="margin-bottom:18px;">
                     <label for="buyerPhone" style="font-weight:500;display:block;margin-bottom:6px;color:#444;">Phone
                         Number</label>
-                    <input id="buyerPhone" name="buyerPhone" type="tel" required
+                    <input id="buyerPhone" name="phone" type="tel" required
                         style="width:100%;padding:10px 14px;border:1px solid #ddd;border-radius:8px;margin-top:4px;font-size:1em;transition:border-color 0.2s;box-sizing:border-box;">
                 </div>
                 <div style="margin-bottom:22px;">
                     <label for="buyerAddress"
                         style="font-weight:500;display:block;margin-bottom:6px;color:#444;">Delivery Address</label>
-                    <textarea id="buyerAddress" name="buyerAddress" required
+                    <textarea id="buyerAddress" name="address" required
                         style="width:100%;padding:10px 14px;border:1px solid #ddd;border-radius:8px;margin-top:4px;font-size:1em;transition:border-color 0.2s;resize:vertical;min-height:80px;box-sizing:border-box;"></textarea>
                 </div>
                 <button id="buyNowSubmitBtn" type="submit"
@@ -888,2069 +881,307 @@
     </div>
     <!-- ***** Hero Area End ***** -->
 
-    <body>
-        <div id="modelsContainer">
-            <model-viewer id="modelViewer1" src="./models/female_sweater.glb" ar
-                ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1" exposure="1"
-                alt="A 3D model" disable-zoom>
-            </model-viewer>
-            <model-viewer id="modelViewer2" src="./models/shawl.glb" ar ar-modes="webxr scene-viewer quick-look"
-                camera-controls shadow-intensity="1" exposure="1" alt="A 3D model" disable-zoom>
-            </model-viewer>
-        </div>
-
-
-        <div id="colorPickerContainer">
-            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
-                <label for="colorSwatchContainer1">Sweater Color:</label>
-                <div id="colorSwatchContainer1" class="colorSwatchContainer">
-                    <div class="color-swatch" data-color="rgb(45, 44, 52)" style="background-color: rgb(45, 44, 52);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(36, 50, 89)" style="background-color: rgb(36, 50, 89);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(9, 62, 116)" style="background-color: rgb(9, 62, 116);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(15, 110, 156)"
-                        style="background-color: rgb(15, 110, 156);"></div>
-                    <div class="color-swatch" data-color="rgb(130, 181, 185)"
-                        style="background-color: rgb(130, 181, 185);"></div>
-                    <div class="color-swatch" data-color="rgb(30, 79, 73)" style="background-color: rgb(30, 79, 73);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(82, 92, 81)" style="background-color: rgb(82, 92, 81);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(174, 150, 116)"
-                        style="background-color: rgb(174, 150, 116);"></div>
-                    <div class="color-swatch" data-color="rgb(8, 157, 29)" style="background-color: rgb(8, 157, 29);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(145, 183, 8)" style="background-color: rgb(145, 183, 8);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(50, 98, 58)" style="background-color: rgb(50, 98, 58);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(125, 182, 105)"
-                        style="background-color: rgb(125, 182, 105);"></div>
-                    <div class="color-swatch" data-color="rgb(20, 70, 17)" style="background-color: rgb(20, 70, 17);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(210, 212, 198)"
-                        style="background-color: rgb(210, 212, 198);"></div>
-                    <div class="color-swatch" data-color="rgb(176, 236, 182)"
-                        style="background-color: rgb(176, 236, 182);"></div>
-                    <div class="color-swatch" data-color="rgb(8, 132, 132)" style="background-color: rgb(8, 132, 132);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(10, 15, 115)" style="background-color: rgb(10, 15, 115);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(8, 207, 210)" style="background-color: rgb(8, 207, 210);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(50, 244, 253)"
-                        style="background-color: rgb(50, 244, 253);"></div>
-                    <div class="color-swatch" data-color="rgb(52, 109, 198)"
-                        style="background-color: rgb(52, 109, 198);"></div>
-                    <div class="color-swatch" data-color="rgb(8, 183, 228)" style="background-color: rgb(8, 183, 228);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(179, 209, 235)"
-                        style="background-color: rgb(179, 209, 235);"></div>
-                    <div class="color-swatch" data-color="rgb(8, 108, 84)" style="background-color: rgb(8, 108, 84);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(70, 225, 209)"
-                        style="background-color: rgb(70, 225, 209);"></div>
-                    <div class="color-swatch" data-color="rgb(209, 225, 225)"
-                        style="background-color: rgb(209, 225, 225);"></div>
-                    <div class="color-swatch" data-color="rgb(83, 18, 130)" style="background-color: rgb(83, 18, 130);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(145, 75, 137)"
-                        style="background-color: rgb(145, 75, 137);"></div>
-                    <div class="color-swatch" data-color="rgb(147, 9, 255)" style="background-color: rgb(147, 9, 255);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(183, 130, 222)"
-                        style="background-color: rgb(183, 130, 222);"></div>
-                    <div class="color-swatch" data-color="rgb(224, 199, 254)"
-                        style="background-color: rgb(224, 199, 254);"></div>
-                    <div class="color-swatch" data-color="rgb(8, 8, 8)" style="background-color: rgb(8, 8, 8);"></div>
-                    <div class="color-swatch" data-color="rgb(104, 108, 111)"
-                        style="background-color: rgb(104, 108, 111);"></div>
-                    <div class="color-swatch" data-color="rgb(192, 177, 184)"
-                        style="background-color: rgb(192, 177, 184);"></div>
-                    <div class="color-swatch" data-color="rgb(180, 191, 183)"
-                        style="background-color: rgb(180, 191, 183);"></div>
-                    <div class="color-swatch" data-color="rgb(119, 136, 152)"
-                        style="background-color: rgb(119, 136, 152);"></div>
-                    <div class="color-swatch" data-color="rgb(84, 58, 43)" style="background-color: rgb(84, 58, 43);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(104, 86, 76)" style="background-color: rgb(104, 86, 76);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(127, 76, 59)" style="background-color: rgb(127, 76, 59);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(178, 108, 49)"
-                        style="background-color: rgb(178, 108, 49);"></div>
-                    <div class="color-swatch" data-color="rgb(238, 234, 209)"
-                        style="background-color: rgb(238, 234, 209);"></div>
-                    <div class="color-swatch" data-color="rgb(51, 11, 11)" style="background-color: rgb(51, 11, 11);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(199, 80, 144)"
-                        style="background-color: rgb(199, 80, 144);"></div>
-                    <div class="color-swatch" data-color="rgb(126, 11, 42)" style="background-color: rgb(126, 11, 42);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(254, 9, 8)" style="background-color: rgb(254, 9, 8);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(254, 67, 184)"
-                        style="background-color: rgb(254, 67, 184);"></div>
-                    <div class="color-swatch" data-color="rgb(156, 22, 81)" style="background-color: rgb(156, 22, 81);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(254, 9, 254)" style="background-color: rgb(254, 9, 254);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(255, 36, 146)"
-                        style="background-color: rgb(255, 36, 146);"></div>
-                    <div class="color-swatch" data-color="rgb(226, 69, 218)"
-                        style="background-color: rgb(226, 69, 218);"></div>
-                    <div class="color-swatch" data-color="rgb(242, 213, 215)"
-                        style="background-color: rgb(242, 213, 215);"></div>
-                    <div class="color-swatch" data-color="rgb(91, 31, 69)" style="background-color: rgb(91, 31, 69);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(185, 71, 21)" style="background-color: rgb(185, 71, 21);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(173, 46, 13)" style="background-color: rgb(173, 46, 13)">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(123, 34, 20)" style="background-color: rgb(123, 34, 20)">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(254, 172, 150)"
-                        style="background-color: rgb(254, 172, 150)"></div>
-                    <div class="color-swatch" data-color="rgb(203, 36, 53)" style="background-color: rgb(203, 36, 53)">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(234, 109, 51)"
-                        style="background-color: rgb(234, 109, 51)"></div>
-                    <div class="color-swatch" data-color="rgb(255, 168, 8)" style="background-color: rgb(255, 168, 8)">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(211, 184, 166)"
-                        style="background-color: rgb(211, 184, 166)"></div>
-                    <div class="color-swatch" data-color="rgb(254, 210, 223)"
-                        style="background-color: rgb(254, 210, 223)"></div>
-                    <div class="color-swatch" data-color="rgb(255, 208, 34)"
-                        style="background-color: rgb(255, 208, 34)"></div>
-                    <div class="color-swatch" data-color="rgb(255, 238, 47)"
-                        style="background-color: rgb(255, 238, 47)"></div>
-                    <div class="color-swatch" data-color="rgb(255, 255, 155)"
-                        style="background-color: rgb(255, 255, 155)"></div>
-                    <div class="color-swatch" data-color="rgb(252, 179, 77)"
-                        style="background-color: rgb(252, 179, 77)"></div>
-                    <div class="color-swatch" data-color="rgb(255, 224, 123)"
-                        style="background-color: rgb(255, 224, 123)"></div>
-                    <div class="color-swatch" data-color="rgb(255, 110, 183)"
-                        style="background-color: rgb(255, 110, 183)"></div>
-                    <div class="color-swatch" data-color="rgb(253, 76, 94)" style="background-color: rgb(253, 76, 94)">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(222, 164, 163)"
-                        style="background-color: rgb(222, 164, 163)"></div>
-                    <div class="color-swatch" data-color="rgb(255, 255, 227)"
-                        style="background-color: rgb(255, 255, 227)"></div>
-                    <div class="color-swatch" data-color="rgb(113, 65, 174)"
-                        style="background-color: rgb(113, 65, 174)"></div>
-                </div>
-            </div>
-            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
-                <label for="colorSwatchContainer2">Shawl Color:</label>
-                <div id="colorSwatchContainer2" class="colorSwatchContainer">
-                    <div class="color-swatch" data-color="rgb(45, 44, 52)" style="background-color: rgb(45, 44, 52);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(36, 50, 89)" style="background-color: rgb(36, 50, 89);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(9, 62, 116)" style="background-color: rgb(9, 62, 116);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(15, 110, 156)"
-                        style="background-color: rgb(15, 110, 156);"></div>
-                    <div class="color-swatch" data-color="rgb(130, 181, 185)"
-                        style="background-color: rgb(130, 181, 185);"></div>
-                    <div class="color-swatch" data-color="rgb(30, 79, 73)" style="background-color: rgb(30, 79, 73);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(82, 92, 81)" style="background-color: rgb(82, 92, 81);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(174, 150, 116)"
-                        style="background-color: rgb(174, 150, 116);"></div>
-                    <div class="color-swatch" data-color="rgb(8, 157, 29)" style="background-color: rgb(8, 157, 29);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(145, 183, 8)" style="background-color: rgb(145, 183, 8);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(50, 98, 58)" style="background-color: rgb(50, 98, 58);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(125, 182, 105)"
-                        style="background-color: rgb(125, 182, 105);"></div>
-                    <div class="color-swatch" data-color="rgb(20, 70, 17)" style="background-color: rgb(20, 70, 17);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(210, 212, 198)"
-                        style="background-color: rgb(210, 212, 198);"></div>
-                    <div class="color-swatch" data-color="rgb(176, 236, 182)"
-                        style="background-color: rgb(176, 236, 182);"></div>
-                    <div class="color-swatch" data-color="rgb(8, 132, 132)" style="background-color: rgb(8, 132, 132);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(10, 15, 115)" style="background-color: rgb(10, 15, 115);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(8, 207, 210)" style="background-color: rgb(8, 207, 210);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(50, 244, 253)"
-                        style="background-color: rgb(50, 244, 253);"></div>
-                    <div class="color-swatch" data-color="rgb(52, 109, 198)"
-                        style="background-color: rgb(52, 109, 198);"></div>
-                    <div class="color-swatch" data-color="rgb(8, 183, 228)" style="background-color: rgb(8, 183, 228);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(179, 209, 235)"
-                        style="background-color: rgb(179, 209, 235);"></div>
-                    <div class="color-swatch" data-color="rgb(8, 108, 84)" style="background-color: rgb(8, 108, 84);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(70, 225, 209)"
-                        style="background-color: rgb(70, 225, 209);"></div>
-                    <div class="color-swatch" data-color="rgb(209, 225, 225)"
-                        style="background-color: rgb(209, 225, 225);"></div>
-                    <div class="color-swatch" data-color="rgb(83, 18, 130)" style="background-color: rgb(83, 18, 130);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(145, 75, 137)"
-                        style="background-color: rgb(145, 75, 137);"></div>
-                    <div class="color-swatch" data-color="rgb(147, 9, 255)" style="background-color: rgb(147, 9, 255);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(183, 130, 222)"
-                        style="background-color: rgb(183, 130, 222);"></div>
-                    <div class="color-swatch" data-color="rgb(224, 199, 254)"
-                        style="background-color: rgb(224, 199, 254);"></div>
-                    <div class="color-swatch" data-color="rgb(8, 8, 8)" style="background-color: rgb(8, 8, 8);"></div>
-                    <div class="color-swatch" data-color="rgb(104, 108, 111)"
-                        style="background-color: rgb(104, 108, 111);"></div>
-                    <div class="color-swatch" data-color="rgb(192, 177, 184)"
-                        style="background-color: rgb(192, 177, 184);"></div>
-                    <div class="color-swatch" data-color="rgb(180, 191, 183)"
-                        style="background-color: rgb(180, 191, 183);"></div>
-                    <div class="color-swatch" data-color="rgb(119, 136, 152)"
-                        style="background-color: rgb(119, 136, 152);"></div>
-                    <div class="color-swatch" data-color="rgb(84, 58, 43)" style="background-color: rgb(84, 58, 43);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(104, 86, 76)" style="background-color: rgb(104, 86, 76);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(127, 76, 59)" style="background-color: rgb(127, 76, 59);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(178, 108, 49)"
-                        style="background-color: rgb(178, 108, 49);"></div>
-                    <div class="color-swatch" data-color="rgb(238, 234, 209)"
-                        style="background-color: rgb(238, 234, 209);"></div>
-                    <div class="color-swatch" data-color="rgb(51, 11, 11)" style="background-color: rgb(51, 11, 11);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(199, 80, 144)"
-                        style="background-color: rgb(199, 80, 144);"></div>
-                    <div class="color-swatch" data-color="rgb(126, 11, 42)" style="background-color: rgb(126, 11, 42);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(254, 9, 8)" style="background-color: rgb(254, 9, 8);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(254, 67, 184)"
-                        style="background-color: rgb(254, 67, 184);"></div>
-                    <div class="color-swatch" data-color="rgb(156, 22, 81)" style="background-color: rgb(156, 22, 81);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(254, 9, 254)" style="background-color: rgb(254, 9, 254);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(255, 36, 146)"
-                        style="background-color: rgb(255, 36, 146);"></div>
-                    <div class="color-swatch" data-color="rgb(226, 69, 218)"
-                        style="background-color: rgb(226, 69, 218);"></div>
-                    <div class="color-swatch" data-color="rgb(242, 213, 215)"
-                        style="background-color: rgb(242, 213, 215);"></div>
-                    <div class="color-swatch" data-color="rgb(91, 31, 69)" style="background-color: rgb(91, 31, 69);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(185, 71, 21)" style="background-color: rgb(185, 71, 21);">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(173, 46, 13)" style="background-color: rgb(173, 46, 13)">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(123, 34, 20)" style="background-color: rgb(123, 34, 20)">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(254, 172, 150)"
-                        style="background-color: rgb(254, 172, 150)"></div>
-                    <div class="color-swatch" data-color="rgb(203, 36, 53)" style="background-color: rgb(203, 36, 53)">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(234, 109, 51)"
-                        style="background-color: rgb(234, 109, 51)"></div>
-                    <div class="color-swatch" data-color="rgb(255, 168, 8)" style="background-color: rgb(255, 168, 8)">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(211, 184, 166)"
-                        style="background-color: rgb(211, 184, 166)"></div>
-                    <div class="color-swatch" data-color="rgb(254, 210, 223)"
-                        style="background-color: rgb(254, 210, 223)"></div>
-                    <div class="color-swatch" data-color="rgb(255, 208, 34)"
-                        style="background-color: rgb(255, 208, 34)"></div>
-                    <div class="color-swatch" data-color="rgb(255, 238, 47)"
-                        style="background-color: rgb(255, 238, 47)"></div>
-                    <div class="color-swatch" data-color="rgb(255, 255, 155)"
-                        style="background-color: rgb(255, 255, 155)"></div>
-                    <div class="color-swatch" data-color="rgb(252, 179, 77)"
-                        style="background-color: rgb(252, 179, 77)"></div>
-                    <div class="color-swatch" data-color="rgb(255, 224, 123)"
-                        style="background-color: rgb(255, 224, 123)"></div>
-                    <div class="color-swatch" data-color="rgb(255, 110, 183)"
-                        style="background-color: rgb(255, 110, 183)"></div>
-                    <div class="color-swatch" data-color="rgb(253, 76, 94)" style="background-color: rgb(253, 76, 94)">
-                    </div>
-                    <div class="color-swatch" data-color="rgb(222, 164, 163)"
-                        style="background-color: rgb(222, 164, 163)"></div>
-                    <div class="color-swatch" data-color="rgb(255, 255, 227)"
-                        style="background-color: rgb(255, 255, 227)"></div>
-                    <div class="color-swatch" data-color="rgb(113, 65, 174)"
-                        style="background-color: rgb(113, 65, 174)"></div>
-                </div>
-            </div>
-        </div>
-        <!-- Disclaimer: 3D Model & Color Accuracy -->
-        <div
-            class="product-disclaimer"
-            style="max-width: 1300px; margin: 30px auto 0 auto; border-radius: 14px; color: #333; font-size: 1.05em; text-align: center;">
-            <strong>Disclaimer:</strong> 3D models and colors are for reference only. Actual product colors may vary due
-            to screen settings, lighting, and material differences.
-        </div>
-
-        <style>
-        @media (max-width: 768px) {
-            .product-disclaimer {
-                display: none !important;
-            }
-        }
-        </style>
-
-        <script type="module">
-          const modelViewer1 = document.getElementById("modelViewer1");
-          const modelViewer2 = document.getElementById("modelViewer2");
-    
-          function hexToRgba(hex) {
-            let r = 0, g = 0, b = 0;
-            if (hex.length === 4) {
-              r = "0x" + hex[1] + hex[1];
-              g = "0x" + hex[2] + hex[2];
-              b = "0x" + hex[3] + hex[3];
-            } else if (hex.length === 7) {
-              r = "0x" + hex[1] + hex[2];
-              g = "0x" + hex[3] + hex[4];
-              b = "0x" + hex[5] + hex[6];
-            }
-            return [r / 255, g / 255, b / 255, 1];
-          }
-    
-          function rgbStringToRgba(rgbString) {
-            const match = rgbString.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
-            if (!match) return [1, 1, 1, 1];
-            return [
-              parseInt(match[1], 10) / 255,
-              parseInt(match[2], 10) / 255,
-              parseInt(match[3], 10) / 255,
-              1
-            ];
-          }
-    
-          function applyMaterialChanges(modelViewer, colorValue) {
-            if (!modelViewer.model || !modelViewer.model.materials) {
-              console.warn("Model not loaded yet, cannot change material.");
-              return;
-            }
-            let rgbaColor;
-            if (colorValue.startsWith('#')) {
-              rgbaColor = hexToRgba(colorValue);
-            } else if (colorValue.startsWith('rgb')) {
-              rgbaColor = rgbStringToRgba(colorValue);
-            } else {
-              rgbaColor = [1, 1, 1, 1];
-            }
-            const materials = modelViewer.model.materials;
-    
-            if (modelViewer.id === "modelViewer2") {
-              // Only change kain.001 in shawl.glb
-              for (const material of materials) {
-                if (material.pbrMetallicRoughness && material.name === "kain.001") {
-                  material.pbrMetallicRoughness.setBaseColorFactor(rgbaColor);
-                  material.pbrMetallicRoughness.setRoughnessFactor(0.8);
-                  material.pbrMetallicRoughness.setMetallicFactor(0.0);
-                }
-              }
-            } else {
-              // Change all materials in sweater
-              for (const material of materials) {
-                if (material.pbrMetallicRoughness) {
-                  material.pbrMetallicRoughness.setBaseColorFactor(rgbaColor);
-                  material.pbrMetallicRoughness.setRoughnessFactor(0.8);
-                  material.pbrMetallicRoughness.setMetallicFactor(0.0);
-                }
-              }
-            }
-          }
-    
-          function updateSweaterColor(colorValue) {
-            applyMaterialChanges(modelViewer1, colorValue);
-          }
-    
-          function updateShawlColor(colorValue) {
-            applyMaterialChanges(modelViewer2, colorValue);
-          }
-    
-          document.querySelectorAll('#colorSwatchContainer1 .color-swatch').forEach(swatch => {
-            swatch.addEventListener('click', function () {
-              const rgb = this.getAttribute('data-color');
-              updateSweaterColor(rgb);
-              document.querySelectorAll('#colorSwatchContainer1 .color-swatch.active').forEach(el => el.classList.remove('active'));
-              this.classList.add('active');
-            });
-          });
-    
-          document.querySelectorAll('#colorSwatchContainer2 .color-swatch').forEach(swatch => {
-            swatch.addEventListener('click', function () {
-              const rgb = this.getAttribute('data-color');
-              updateShawlColor(rgb);
-              document.querySelectorAll('#colorSwatchContainer2 .color-swatch.active').forEach(el => el.classList.remove('active'));
-              this.classList.add('active');
-            });
-          });
-    
-          modelViewer1.addEventListener("load", () => {
-            const first = document.querySelector('#colorSwatchContainer1 .color-swatch');
-            if (first) {
-              first.classList.add('active');
-              updateSweaterColor(first.getAttribute('data-color'));
-            }
-          });
-    
-          modelViewer2.addEventListener("load", () => {
-            const first = document.querySelector('#colorSwatchContainer2 .color-swatch');
-            if (first) {
-              first.classList.add('active');
-              updateShawlColor(first.getAttribute('data-color'));
-            }
-          });
-
-          // --- Out-of-bounds color picker dropdown logic ---
-          const colorPickerDropdown = document.getElementById('colorPickerDropdown');
-          const colorPickerDropdownBtn = document.getElementById('colorPickerDropdownBtn');
-          const colorPickerDropdownList = document.getElementById('colorPickerDropdownList');
-          const colorPickerDropdownSelected = document.getElementById('colorPickerDropdownSelected');
-          // Use same getAllColors as modal
-          function getAllColors() {
-            const swatches = document.querySelectorAll('.color-swatch');
-            const colors = [];
-            swatches.forEach(swatch => {
-              const color = swatch.getAttribute('data-color');
-              if (color && !colors.includes(color)) colors.push(color);
-            });
-            return colors;
-          }
-          function setGlobalColor(color) {
-            colorPickerDropdownSelected.innerHTML = `<span class="shadcn-dropdown-swatch" style="background:${color};"></span> ${color}`;
-            colorPickerDropdownBtn.setAttribute('data-color', color);
-            // Optionally: update all model-viewers or product-box background
-            document.getElementById('product-box').style.backgroundColor = color;
-            // Mark active in dropdown
-            colorPickerDropdownList.querySelectorAll('.shadcn-dropdown-option').forEach(opt => {
-              if (opt.getAttribute('data-color') === color) {
-                opt.classList.add('active');
-              } else {
-                opt.classList.remove('active');
-              }
-            });
-          }
-          function openGlobalDropdown() {
-            colorPickerDropdownList.style.display = 'block';
-            colorPickerDropdownBtn.setAttribute('aria-expanded', 'true');
-            // Out-of-bounds logic: open up if not enough space below
-            const rect = colorPickerDropdown.getBoundingClientRect();
-            const dropdownHeight = 220;
-            if (window.innerHeight - rect.bottom < dropdownHeight && rect.top > dropdownHeight) {
-              colorPickerDropdown.classList.add('open-up');
-            } else {
-              colorPickerDropdown.classList.remove('open-up');
-            }
-          }
-          function closeGlobalDropdown() {
-            colorPickerDropdownList.style.display = 'none';
-            colorPickerDropdownBtn.setAttribute('aria-expanded', 'false');
-            colorPickerDropdown.classList.remove('open-up');
-          }
-          function setupGlobalColorDropdown(selectedColor) {
-            const colors = getAllColors();
-            colorPickerDropdownList.innerHTML = '';
-            if (colors.length > 0) {
-              colors.forEach((color, idx) => {
-                const opt = document.createElement('div');
-                opt.className = 'shadcn-dropdown-option' + (selectedColor && selectedColor === color ? ' active' : '');
-                opt.setAttribute('data-color', color);
-                opt.innerHTML = `<span class="shadcn-dropdown-swatch" style="background:${color};"></span> ${color}`;
-                opt.addEventListener('click', function() {
-                  setGlobalColor(color);
-                  closeGlobalDropdown();
-                });
-                colorPickerDropdownList.appendChild(opt);
-              });
-              setGlobalColor(selectedColor || colors[0]);
-            }
-          }
-          colorPickerDropdownBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            if (colorPickerDropdownList.style.display === 'block') {
-              closeGlobalDropdown();
-            } else {
-              openGlobalDropdown();
-            }
-          });
-          document.addEventListener('click', function() {
-            closeGlobalDropdown();
-          });
-          colorPickerDropdownList.addEventListener('click', function(e) {
-            e.stopPropagation();
-          });
-          // Initialize on load
-          setupGlobalColorDropdown();
-
-          // Buy Now Modal logic
-          document.getElementById('closeBuyNowModal').addEventListener('click', function() {
-              document.getElementById('buyNowModal').style.display = 'none';
-          });
-          document.getElementById('buyNowModal').addEventListener('click', function(e) {
-              if (e.target === this) this.style.display = 'none';
-          });
-
-          // --- Clear cart on Buy Now Submit ---
-          document.getElementById('buyNowForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            console.log('buyNowForm submit event triggered'); // Debug: Submit triggered
-
-            let cart = JSON.parse(localStorage.getItem('knitwear_cart') || '[]');
-            
-            // Prevent submission if cart is empty
-            if (!cart || cart.length === 0) {
-              alert("Your cart is empty. Please add items before placing an order.");
-              return;
-            }
-
-            // --- Add image field for each cart item if not present ---
-            cart = cart.map(item => ({
-              ...item,
-              image: item.img || item.image // ensure 'image' field is present for server
-            }));
-
-            const buyerData = {
-              name: this.buyerName.value.trim(),
-              email: this.buyerEmail.value.trim(),
-              phone: this.buyerPhone.value.trim(),
-              address: this.buyerAddress.value.trim(),
-              cart: cart
-            };
-            console.log('Sending order data:', buyerData); // Debug log
-
-            if (!buyerData.name || !buyerData.email || !buyerData.phone || !buyerData.address) {
-              alert("Please fill out all required fields.");
-              return;
-            }
-
-            // Show loading indicator
-            const submitBtn = document.getElementById('buyNowSubmitBtn');
-            const loader = document.getElementById('buyNowLoader');
-                                  if (submitBtn && loader) {
-              submitBtn.disabled = true;
-              loader.style.display = 'inline-block';
-            }
-
-            fetch('http://localhost:3001/send-email', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(buyerData)
-            })
-            .then(res => {
-              // Log response status for debugging
-              console.log('Response status:', res.status);
-              return res.json();
-            })
-            .then(data => {
-              console.log('Response data:', data); // Log the complete response for debugging
-              if (data && data.success) {
-                // Clear cart properly with multiple approaches for redundancy
-                localStorage.removeItem('knitwear_cart');
-                cart = [];
-                window.cart = [];
-                
-                // Reset cart count and update cart UI
-                document.getElementById('cartCount').textContent = '0';
-                document.getElementById('cartCount').style.display = 'none';
-                
-                // Clear cart items display
-                const cartItemsDiv = document.getElementById('cartItems');
-                if (cartItemsDiv) {
-                  cartItemsDiv.innerHTML = '<div style="color:#888;text-align:center;margin-top:30px;" id="cartEmptyMsg">Your cart is empty.</div>';
-                }
-                
-                // Disable buy now button
-                const cartBuyNowBtn = document.getElementById('cartBuyNowBtn');
-                if (cartBuyNowBtn) {
-                  cartBuyNowBtn.disabled = true;
-                  cartBuyNowBtn.style.opacity = '0.5';
-                  cartBuyNowBtn.style.cursor = 'not-allowed';
-                }
-                
-                updateCartUI(); // Update UI to reflect empty cart
-                // Ensure the cart is really empty
-                setTimeout(() => {
-                  localStorage.removeItem('knitwear_cart');
-                  updateCartUI();
-                }, 100);
-                
-                alert("Thank you! Your order has been submitted.");
-                buyNowForm.reset();
-                document.getElementById('buyNowModal').style.display = 'none';
-                hideCartModal(); // Make sure to close the cart modal too
-              } else {
-                alert(data?.message || "Failed to send order. Please try again.");
-              }
-            })
-            .catch(function(error) {
-              console.error("Email sending failed:", error);
-              alert("Failed to send order. Please try again. Error: " + error.message);
-            })
-            .finally(() => {
-              // Hide loading indicator
-              if (submitBtn && loader) {
-                submitBtn.disabled = false;
-                loader.style.display = 'none';
-              }
-            });
-          });
-        </script>
-        <!-- Grids -->
-        <div class="grids d-flex justify-content-between">
-            <div class="grid1"></div>
-            <div class="grid2"></div>
-            <div class="grid3"></div>
-            <div class="grid4"></div>
-            <div class="grid5"></div>
-            <div class="grid6"></div>
-            <div class="grid7"></div>
-            <div class="grid8"></div>
-            <div class="grid9"></div>
-        </div>
-
-        <!-- ***** Main Menu Area Start ***** -->
-        <div class="mainMenu d-flex align-items-center justify-content-between">
-            <!-- Close Icon -->
-            <div class="closeIcon">
-                               <i class="ti-close" aria-hidden="true"></i>
-            </div>
-            <!-- Logo Area -->
-            <div class="logo-area">
-                <a href="index.html"><img class="logoImage" src="img/bg-img/LogoJ.png" style="max-width: 50%;"
-                        alt=""></a>neshdeep Knitwear</a>
-            </div>
-            <!-- Nav -->
-            <div class="sonarNav">
-                <nav>
-                    <ul>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about-me.html">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="services.html">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="products.html">Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="portfolio.html">Gallery</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="blog.html">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <!-- Copwrite Text -->
-            <div class="copywrite-text">
-                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;
-                    <script>document.write(new Date().getFullYear());</script> All rights reserved | Ganeshdeep Knitwear
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </p>
-            </div>
-        </div>
-        <!-- ***** Main Menu Area End ***** -->
-
-        <!-- ***** Header Area Start ***** -->
-        <header class="header-area">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="menu-area d-flex justify-content-between">
-                            <!-- Logo Area  -->
-                            <div class="logo-area">
-                                <a href="index.html"><img class="logoImage" src="img/bg-img/LogoJ.png"
-                                        style="max-width: 50%;" alt=""></a></a>
-                            </div>
-
-                            <div class="menu-content-area d-flex align-items-center">
-                                <!-- Header Social Area -->
-                                <div class="header-social-area d-flex align-items-center">
-                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i
-                                            class="fa fa-pinterest" aria-hidden="true"></i></a>
-                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><i
-                                            class="fa fa-linkedin" aria-hidden="true"></i></a>
-                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i
-                                            class="fa fa-instagram" aria-hidden="true"></i></a>
-                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i
-                                            class="fa fa-facebook" aria-hidden="true"></i></a>
-                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i
-                                            class="fa fa-twitter" aria-hidden="true"></i></a>
-                                </div>
-                                <!-- Menu Icon -->
-                                <span class="navbar-toggler-icon" id="menuIcon"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- ***** Header Area End ***** -->
-
-        <!-- ****** Gallery Area Start ****** -->
-        <section class="sonar-projects-area" id="projects">
-            <div class="container-fluid">
-                <div class="row sonar-portfolio">
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes portraits wow fadeInUpBig"
-                        data-wow-delay="300ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/1.jpg">
-                            <img src="img/product-img/1.jpg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Shawls</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Shawls"
-                                    data-img="img/product-img/1.jpg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes portraits wow fadeInUpBig"
-                        data-wow-delay="500ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/2.jpg">
-                            <img src="img/product-img/2.jpg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Shawls</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Shawls"
-                                    data-img="img/product-img/2.jpg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes portraits wow fadeInUpBig"
-                        data-wow-delay="700ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/3.jpg">
-                            <img src="img/product-img/3.jpg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Shawls</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Shawls"
-                                    data-img="img/product-img/3.jpg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes portraits wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/4.jpg">
-                            <img src="img/product-img/4.jpg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Shawls</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Shawls"
-                                    data-img="img/product-img/4.jpg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes portraits wow fadeInUpBig"
-                        data-wow-delay="300ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/5.jpg">
-                            <img src="img/product-img/5.jpg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Shawls</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Shawls"
-                                    data-img="img/product-img/5.jpg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes wow fadeInUpBig"
-                        data-wow-delay="500ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/6.jpg">
-                            <img src="img/product-img/6.jpg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Shawls</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Shawls"
-                                    data-img="img/product-img/6.jpg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes portraits wow fadeInUpBig"
-                        data-wow-delay="700ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/7.jpg">
-                            <img src="img/product-img/7.jpg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Shawls</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Shawls"
-                                    data-img="img/product-img/7.jpg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes portraits wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/8.jpg">
-                            <img src="img/product-img/8.jpg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Shawls</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Shawls"
-                                    data-img="img/product-img/8.jpg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes fashion wow fadeInUpBig"
-                        data-wow-delay="300ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/9.jpg">
-                            <img src="img/product-img/9.jpg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Shawls</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Shawls"
-                                    data-img="img/product-img/9.jpg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes wow fadeInUpBig"
-                        data-wow-delay="700ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/11.jpg">
-                            <img src="img/product-img/11.jpg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Shawls</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Shawls"
-                                    data-img="img/product-img/11.jpg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/12.jpg">
-                            <img src="img/product-img/12.jpg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Shawls</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Shawls"
-                                    data-img="img/product-img/12.jpg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/13.jpg">
-                            <img src="img/product-img/13.jpg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Shawls</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Shawls"
-                                    data-img="img/product-img/13.jpg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes portraits fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/14.jpg">
-                            <img src="img/product-img/14.jpg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Shawls</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Shawls"
-                                    data-img="img/product-img/14.jpg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/15.jpg">
-                            <img src="img/product-img/15.jpg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Designer"
-                                    data-img="img/product-img/15.jpg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes studio wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/16.jpg">
-                            <img src="img/product-img/16.jpg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Shawls | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Shawls | Designer"
-                                    data-img="img/product-img/16.jpg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/17.jpg">
-                            <img src="img/product-img/17.jpg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Shawls</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Shawls"
-                                    data-img="img/product-img/17.jpg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes portraits wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/18.jpg">
-                            <img src="img/product-img/18.jpg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Shawls</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Shawls"
-                                    data-img="img/product-img/18.jpg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/19.jpg">
-                            <img src="img/product-img/19.jpg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Shawls | Designers</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Shawls | Designers"
-                                    data-img="img/product-img/19.jpg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion studio wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/21.jpg">
-                            <img src="img/product-img/21.jpg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Designer"
-                                    data-img="img/product-img/21.jpg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <!-- <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes fashion wow fadeInUpBig"
-                    data-wow-delay="900ms">
-                    <div class="gallery-img product-modal-trigger" data-img="img/product-img/22.jpg">
-                        <img src="img/product-img/22.jpg" alt="Product">
-                        <div class="gallery-content">
-                            <h4>Shawls | Designers</h4>
-                            <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Shawls | Designers" data-img="img/product-img/22.jpg">
-                                <span class="cart-icon">🛒</span>Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                </div> -->
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/23.jpg">
-                            <img src="img/product-img/23.jpg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Shawls</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Shawls"
-                                    data-img="img/product-img/23.jpg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/24.jpg">
-                            <img src="img/product-img/24.jpg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Shawls</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Shawls"
-                                    data-img="img/product-img/24.jpg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item fashion studio wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/25.jpg">
-                            <img src="img/product-img/25.jpg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Designer | Warmers</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Designer | Warmers"
-                                    data-img="img/product-img/25.jpg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item fashion studio wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/26.jpg">
-                            <img src="img/product-img/26.jpg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Designer | Warmers</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Designer | Warmers"
-                                    data-img="img/product-img/26.jpg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item landscapes fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/28.jpg">
-                            <img src="img/product-img/28.jpg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Shawls | Designers</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Shawls | Designers"
-                                    data-img="img/product-img/28.jpg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/33.jpeg">
-                            <img src="img/product-img/33.jpeg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater"
-                                    data-img="img/product-img/33.jpeg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/34.jpeg">
-                            <img src="img/product-img/34.jpeg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater"
-                                    data-img="img/product-img/34.jpeg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/35.jpeg">
-                            <img src="img/product-img/35.jpeg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Designer"
-                                    data-img="img/product-img/35.jpeg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/36.jpeg">
-                            <img src="img/product-img/36.jpeg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Designer"
-                                    data-img="img/product-img/36.jpeg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/37.jpeg">
-                            <img src="img/product-img/37.jpeg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Designer"
-                                    data-img="img/product-img/37.jpeg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/38.jpeg">
-                            <img src="img/product-img/38.jpeg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Designer"
-                                    data-img="img/product-img/38.jpeg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/39.jpeg">
-                            <img src="img/product-img/39.jpeg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater"
-                                    data-img="img/product-img/39.jpeg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/40.jpeg">
-                            <img src="img/product-img/40.jpeg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater"
-                                    data-img="img/product-img/40.jpeg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/41.jpeg">
-                            <img src="img/product-img/41.jpeg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater"
-                                    data-img="img/product-img/41.jpeg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/43.jpeg">
-                            <img src="img/product-img/43.jpeg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Designer"
-                                    data-img="img/product-img/43.jpeg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/44.jpeg">
-                            <img src="img/product-img/44.jpeg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Designer"
-                                    data-img="img/product-img/44.jpeg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/c1.png">
-                            <img src="img/product-img/c1.png" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Designer"
-                                    data-img="img/product-img/c1.png">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>  
-
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/c3.png">
-                            <img src="img/product-img/c3.png" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Designer"
-                                    data-img="img/product-img/c3.png">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/c4.png">
-                            <img src="img/product-img/c4.png" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Designer"
-                                    data-img="img/product-img/c4.png">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/c5.png">
-                            <img src="img/product-img/c5.png" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Designer"
-                                    data-img="img/product-img/c5.png">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/c6.png">
-                            <img src="img/product-img/c6.png" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Designer"
-                                    data-img="img/product-img/c6.png">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/c7.png">
-                            <img src="img/product-img/c7.png" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Designer"
-                                    data-img="img/product-img/c7.png">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/c8.png">
-                            <img src="img/product-img/c8.png" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Designer"
-                                    data-img="img/product-img/c8.png">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/c9.png">
-                            <img src="img/product-img/c9.png" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Designer"
-                                    data-img="img/product-img/c9.png">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/c10.png">
-                            <img src="img/product-img/c10.png" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Designer"
-                                    data-img="img/product-img/c10.png">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/c11.png">
-                            <img src="img/product-img/c11.png" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Designer"
-                                    data-img="img/product-img/c11.png">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/c12.png">
-                            <img src="img/product-img/c12.png" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Designer"
-                                    data-img="img/product-img/c12.png">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/c13.png">
-                            <img src="img/product-img/c13.png" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Designer"
-                                    data-img="img/product-img/c13.png">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/c14.png">
-                            <img src="img/product-img/c14.png" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Designer"
-                                    data-img="img/product-img/c14.png">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/c15.png">
-                            <img src="img/product-img/c15.png" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Designer"
-                                    data-img="img/product-img/c15.png">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/c16.png">
-                            <img src="img/product-img/c16.png" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Designer"
-                                    data-img="img/product-img/c16.png">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/c17.JPG">
-                            <img src="img/product-img/c17.JPG" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Designer"
-                                    data-img="img/product-img/c17.JPG">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portraits fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/c18.JPG">
-                            <img src="img/product-img/c18.JPG" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Sweater | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Sweater | Designer"
-                                    data-img="img/product-img/c18.JPG">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- Single gallery Item -->
-                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item studio fashion wow fadeInUpBig"
-                        data-wow-delay="900ms">
-                        <div class="gallery-img product-modal-trigger" data-img="img/product-img/42.jpeg">
-                            <img src="img/product-img/42.jpeg" alt="Product">
-                            <div class="gallery-content">
-                                <h4>Warmer | Designer</h4>
-                                <button class="add-to-cart-btn btn btn-sm btn-primary" data-product="Warmer | Designer"
-                                    data-img="img/product-img/42.jpeg">
-                                    <span class="cart-icon">🛒</span>Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
+    <!-- Products Area Start -->
+    <div class="products-area">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="call-to-action-content wow fadeInUp" data-wow-delay="0.3s">
-                        <h5 class="mt-50">Let's talk</h5>
-                        <a href="contact.html" class="btn sonar-btn mt-50">contact us</a>
+                    <div class="section-heading text-center">
+                        <h2>Our Products</h2>
+                        <p>Discover our premium collection of knitwear products</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row sonar-portfolio">
+                <!-- Products will be loaded here dynamically -->
+            </div>
+        </div>
+    </div>
+    <!-- Products Area End -->
+
+    <div id="modelsContainer">
+        <model-viewer id="modelViewer2" src="./models/shawl.glb" ar ar-modes="webxr scene-viewer quick-look"
+            camera-controls shadow-intensity="1" exposure="1" alt="A 3D model" disable-zoom>
+        </model-viewer>
+    </div>
+
+    <div id="colorPickerContainer">
+        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
+            <label for="colorSwatchContainer2">Shawl Color:</label>
+            <div id="colorSwatchContainer2" class="colorSwatchContainer">
+                <div class="color-swatch" data-color="rgb(45, 44, 52)" style="background-color: rgb(45, 44, 52);">
+                </div>
+                <div class="color-swatch" data-color="rgb(36, 50, 89)" style="background-color: rgb(36, 50, 89);">
+                </div>
+                <div class="color-swatch" data-color="rgb(9, 62, 116)" style="background-color: rgb(9, 62, 116);">
+                </div>
+                <div class="color-swatch" data-color="rgb(15, 110, 156)"
+                    style="background-color: rgb(15, 110, 156);"></div>
+                <div class="color-swatch" data-color="rgb(130, 181, 185)"
+                    style="background-color: rgb(130, 181, 185);"></div>
+                <div class="color-swatch" data-color="rgb(30, 79, 73)" style="background-color: rgb(30, 79, 73);">
+                </div>
+                <div class="color-swatch" data-color="rgb(82, 92, 81)" style="background-color: rgb(82, 92, 81);">
+                </div>
+                <div class="color-swatch" data-color="rgb(174, 150, 116)"
+                    style="background-color: rgb(174, 150, 116);"></div>
+                <div class="color-swatch" data-color="rgb(8, 157, 29)" style="background-color: rgb(8, 157, 29);">
+                </div>
+                <div class="color-swatch" data-color="rgb(145, 183, 8)" style="background-color: rgb(145, 183, 8);">
+                </div>
+                <div class="color-swatch" data-color="rgb(50, 98, 58)" style="background-color: rgb(50, 98, 58);">
+                </div>
+                <div class="color-swatch" data-color="rgb(125, 182, 105)"
+                    style="background-color: rgb(125, 182, 105);"></div>
+                <div class="color-swatch" data-color="rgb(20, 70, 17)" style="background-color: rgb(20, 70, 17);">
+                </div>
+                <div class="color-swatch" data-color="rgb(210, 212, 198)"
+                    style="background-color: rgb(210, 212, 198);"></div>
+                <div class="color-swatch" data-color="rgb(176, 236, 182)"
+                    style="background-color: rgb(176, 236, 182);"></div>
+                <div class="color-swatch" data-color="rgb(8, 132, 132)" style="background-color: rgb(8, 132, 132);">
+                </div>
+                <div class="color-swatch" data-color="rgb(10, 15, 115)" style="background-color: rgb(10, 15, 115);">
+                </div>
+                <div class="color-swatch" data-color="rgb(8, 207, 210)" style="background-color: rgb(8, 207, 210);">
+                </div>
+                <div class="color-swatch" data-color="rgb(50, 244, 253)"
+                    style="background-color: rgb(50, 244, 253);"></div>
+                <div class="color-swatch" data-color="rgb(52, 109, 198)"
+                    style="background-color: rgb(52, 109, 198);"></div>
+                <div class="color-swatch" data-color="rgb(8, 183, 228)" style="background-color: rgb(8, 183, 228);">
+                </div>
+                <div class="color-swatch" data-color="rgb(179, 209, 235)"
+                    style="background-color: rgb(179, 209, 235);"></div>
+                <div class="color-swatch" data-color="rgb(8, 108, 84)" style="background-color: rgb(8, 108, 84);">
+                </div>
+                <div class="color-swatch" data-color="rgb(70, 225, 209)"
+                    style="background-color: rgb(70, 225, 209);"></div>
+                <div class="color-swatch" data-color="rgb(209, 225, 225)"
+                    style="background-color: rgb(209, 225, 225);"></div>
+                <div class="color-swatch" data-color="rgb(83, 18, 130)" style="background-color: rgb(83, 18, 130);">
+                </div>
+                <div class="color-swatch" data-color="rgb(145, 75, 137)"
+                    style="background-color: rgb(145, 75, 137);"></div>
+                <div class="color-swatch" data-color="rgb(147, 9, 255)" style="background-color: rgb(147, 9, 255);">
+                </div>
+                <div class="color-swatch" data-color="rgb(183, 130, 222)"
+                    style="background-color: rgb(183, 130, 222);"></div>
+                <div class="color-swatch" data-color="rgb(224, 199, 254)"
+                    style="background-color: rgb(224, 199, 254);"></div>
+                <div class="color-swatch" data-color="rgb(8, 8, 8)" style="background-color: rgb(8, 8, 8);"></div>
+                <div class="color-swatch" data-color="rgb(104, 108, 111)"
+                    style="background-color: rgb(104, 108, 111);"></div>
+                <div class="color-swatch" data-color="rgb(192, 177, 184)"
+                    style="background-color: rgb(192, 177, 184);"></div>
+                <div class="color-swatch" data-color="rgb(180, 191, 183)"
+                    style="background-color: rgb(180, 191, 183);"></div>
+                <div class="color-swatch" data-color="rgb(119, 136, 152)"
+                    style="background-color: rgb(119, 136, 152);"></div>
+                <div class="color-swatch" data-color="rgb(84, 58, 43)" style="background-color: rgb(84, 58, 43);">
+                </div>
+                <div class="color-swatch" data-color="rgb(104, 86, 76)" style="background-color: rgb(104, 86, 76);">
+                </div>
+                <div class="color-swatch" data-color="rgb(127, 76, 59)" style="background-color: rgb(127, 76, 59);">
+                </div>
+                <div class="color-swatch" data-color="rgb(178, 108, 49)"
+                    style="background-color: rgb(178, 108, 49);"></div>
+                <div class="color-swatch" data-color="rgb(238, 234, 209)"
+                    style="background-color: rgb(238, 234, 209);"></div>
+                <div class="color-swatch" data-color="rgb(51, 11, 11)" style="background-color: rgb(51, 11, 11);">
+                </div>
+                <div class="color-swatch" data-color="rgb(199, 80, 144)"
+                    style="background-color: rgb(199, 80, 144);"></div>
+                <div class="color-swatch" data-color="rgb(126, 11, 42)" style="background-color: rgb(126, 11, 42);">
+                </div>
+                <div class="color-swatch" data-color="rgb(254, 9, 8)" style="background-color: rgb(254, 9, 8);">
+                </div>
+                <div class="color-swatch" data-color="rgb(254, 67, 184)"
+                    style="background-color: rgb(254, 67, 184);"></div>
+                <div class="color-swatch" data-color="rgb(156, 22, 81)" style="background-color: rgb(156, 22, 81);">
+                </div>
+                <div class="color-swatch" data-color="rgb(254, 9, 254)" style="background-color: rgb(254, 9, 254);">
+                </div>
+                <div class="color-swatch" data-color="rgb(255, 36, 146)"
+                    style="background-color: rgb(255, 36, 146);"></div>
+                <div class="color-swatch" data-color="rgb(226, 69, 218)"
+                    style="background-color: rgb(226, 69, 218);"></div>
+                <div class="color-swatch" data-color="rgb(242, 213, 215)"
+                    style="background-color: rgb(242, 213, 215);"></div>
+                <div class="color-swatch" data-color="rgb(91, 31, 69)" style="background-color: rgb(91, 31, 69);">
+                </div>
+                <div class="color-swatch" data-color="rgb(185, 71, 21)" style="background-color: rgb(185, 71, 21);">
+                </div>
+                <div class="color-swatch" data-color="rgb(173, 46, 13)" style="background-color: rgb(173, 46, 13)">
+                </div>
+                <div class="color-swatch" data-color="rgb(123, 34, 20)" style="background-color: rgb(123, 34, 20)">
+                </div>
+                <div class="color-swatch" data-color="rgb(254, 172, 150)"
+                    style="background-color: rgb(254, 172, 150)"></div>
+                <div class="color-swatch" data-color="rgb(203, 36, 53)" style="background-color: rgb(203, 36, 53)">
+                </div>
+                <div class="color-swatch" data-color="rgb(234, 109, 51)"
+                    style="background-color: rgb(234, 109, 51)"></div>
+                <div class="color-swatch" data-color="rgb(255, 168, 8)" style="background-color: rgb(255, 168, 8)">
+                </div>
+                <div class="color-swatch" data-color="rgb(211, 184, 166)"
+                    style="background-color: rgb(211, 184, 166)"></div>
+                <div class="color-swatch" data-color="rgb(254, 210, 223)"
+                    style="background-color: rgb(254, 210, 223)"></div>
+                <div class="color-swatch" data-color="rgb(255, 208, 34)"
+                    style="background-color: rgb(255, 208, 34)"></div>
+                <div class="color-swatch" data-color="rgb(255, 238, 47)"
+                    style="background-color: rgb(255, 238, 47)"></div>
+                <div class="color-swatch" data-color="rgb(255, 255, 155)"
+                    style="background-color: rgb(255, 255, 155)"></div>
+                <div class="color-swatch" data-color="rgb(252, 179, 77)"
+                    style="background-color: rgb(252, 179, 77)"></div>
+                <div class="color-swatch" data-color="rgb(255, 224, 123)"
+                    style="background-color: rgb(255, 224, 123)"></div>
+                <div class="color-swatch" data-color="rgb(255, 110, 183)"
+                    style="background-color: rgb(255, 110, 183)"></div>
+                <div class="color-swatch" data-color="rgb(253, 76, 94)" style="background-color: rgb(253, 76, 94)">
+                </div>
+                <div class="color-swatch" data-color="rgb(222, 164, 163)"
+                    style="background-color: rgb(222, 164, 163)"></div>
+                <div class="color-swatch" data-color="rgb(255, 255, 227)"
+                    style="background-color: rgb(255, 255, 227)"></div>
+                <div class="color-swatch" data-color="rgb(113, 65, 174)"
+                    style="background-color: rgb(113, 65, 174)"></div>
+            </div>
+        </div>
+    </div>
+    <div class="product-disclaimer" style="max-width: 1300px; margin: 30px auto 0 auto; border-radius: 14px; color: #333; font-size: 1.05em; text-align: center;">
+        <strong>Disclaimer:</strong> 3D models and colors are for reference only. Actual product colors may vary due to screen settings, lighting, and material differences.
+    </div>
+
+    <style>
+    @media (max-width: 768px) {
+        .product-disclaimer {
+            display: none !important;
+        }
+    }
+    </style>
+
+    <!-- Grids -->
+    <div class="grids d-flex justify-content-between">
+        <div class="grid1"></div>
+        <div class="grid2"></div>
+        <div class="grid3"></div>
+        <div class="grid4"></div>
+        <div class="grid5"></div>
+        <div class="grid6"></div>
+        <div class="grid7"></div>
+        <div class="grid8"></div>
+        <div class="grid9"></div>
+    </div>
+
+    <!-- ***** Main Menu Area Start ***** -->
+    <div class="mainMenu d-flex align-items-center justify-content-between">
+        <!-- Close Icon -->
+        <div class="closeIcon">
+                        <i class="ti-close" aria-hidden="true"></i>
+        </div>
+        <!-- Logo Area -->
+        <div class="logo-area">
+            <a href="index.html"><img class="logoImage" src="img/bg-img/LogoJ.png" style="max-width: 50%;"
+                    alt=""></a></a>
+        </div>
+        <!-- Nav -->
+        <div class="sonarNav">
+            <nav>
+                <ul>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about-me.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Copwrite Text -->
+        <div class="copywrite-text">
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;
+                <script>document.write(new Date().getFullYear());</script> All rights reserved | Ganeshdeep Knitwear
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+    </div>
+    <!-- ***** Main Menu Area End ***** -->
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="menu-area d-flex justify-content-between">
+                        <!-- Logo Area  -->
+                        <div class="logo-area">
+                            <a href="index.html"><img class="logoImage" src="img/bg-img/LogoJ.png"
+                                    style="max-width: 50%;" alt=""></a></a>
+                        </div>
+
+                        <div class="menu-content-area d-flex align-items-center">
+                            <!-- Header Social Area -->
+                            <div class="header-social-area d-flex align-items-center">
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i
+                                        class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><i
+                                        class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i
+                                        class="fa fa-instagram" aria-hidden="true"></i></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i
+                                        class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i
+                                        class="fa fa-twitter" aria-hidden="true"></i></a>
+                            </div>
+                            <!-- Menu Icon -->
+                            <span class="navbar-toggler-icon" id="menuIcon"></span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <script>
-            const swatches = document.querySelectorAll('.color-swatch');
-            const productBox = document.getElementById('product-box');
+    </header>
+    <!-- ***** Header Area End ***** -->
 
-            swatches.forEach(swatch => {
-                swatch.addEventListener('click', () => {
-                    const color = swatch.getAttribute('data-color');
-                    productBox.style.backgroundColor = color;
+    <!-- ****** Gallery Area End ****** -->
 
-                    // Mark the active swatch
-                    swatches.forEach(s => s.classList.remove('active'));
-                    swatch.classList.add('active');
-                });
-            });
-
-            document.addEventListener('DOMContentLoaded', function() {
-                // Prevent default link behavior and scrolling
-                document.querySelectorAll('.gallery-img').forEach(galleryImg => {
-                    galleryImg.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        const imgSrc = this.dataset.img;
-                        const productTitle = this.querySelector('.gallery-content h4').textContent;
-                        openModal(imgSrc, productTitle, true);
-                        return false; // Prevent scroll
-                    });
-                });
-                
-                // Product Modal Handling
-                const modal = document.getElementById('productModal');
-                const modalImg = modal.querySelector('.modal-product-img');
-                const modalTitle = modal.querySelector('.modal-product-title');
-                const modalColorGroup = document.getElementById('modal-color-group');
-                const modalColorDropdown = document.getElementById('modal-color-dropdown');
-                const modalColorDropdownBtn = document.getElementById('modal-color-dropdown-btn');
-                const modalColorDropdownList = document.getElementById('modal-color-dropdown-list');
-                const modalColorDropdownSelected = document.getElementById('modal-color-dropdown-selected');
-
-                // Helper to get unique key for cart item (by title+img+color)
-                function cartKey(title, img, color) {
-                    return title.trim() + '|' + img.trim() + '|' + (color || '');
-                }
-
-                // Gather all unique colors from color swatches on the page
-                function getAllColors() {
-                    const swatches = document.querySelectorAll('.color-swatch');
-                    const colors = [];
-                    swatches.forEach(swatch => {
-                        const color = swatch.getAttribute('data-color');
-                        if (color && !colors.includes(color)) colors.push(color);
-                    });
-                    return colors;
-                }
-
-                // Remove Magnific Popup if it was initialized (defensive)
-                if ($.fn.magnificPopup) {
-                    $('.gallery-img').off('click.magnificPopup');
-                }
-
-                // Handle Add to Cart button clicks
-                document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
-                    btn.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        e.stopPropagation(); // Prevent scroll-to-top on button click
-                        const imgSrc = this.dataset.img;
-                        const productTitle = this.closest('.gallery-content').querySelector('h4').textContent;
-                        openModal(imgSrc, productTitle, true);
-                    });
-                });
-
-                // Modal close handlers
-                modal.querySelector('.modal-close').addEventListener('click', closeModal);
-                modal.addEventListener('click', function(e) {
-                    if (e.target === modal) closeModal();
-                });
-
-                // --- Modal Color Dropdown Setup ---
-                function setupModalColors(selectedColor) {
-                    const colors = getAllColors();
-                    modalColorDropdownList.innerHTML = '';
-                    if (colors.length > 0) {
-                        colors.forEach((color, idx) => {
-                            const opt = document.createElement('div');
-                            opt.className = 'shadcn-dropdown-option' + (selectedColor && selectedColor === color ? ' active' : '');
-                            opt.setAttribute('data-color', color);
-                            opt.innerHTML = `<span class="shadcn-dropdown-swatch" style="background:${color};"></span> ${color}`;
-                            opt.addEventListener('click', function() {
-                                setModalColor(color);
-                                closeDropdown();
-                            });
-                            modalColorDropdownList.appendChild(opt);
-                        });
-                        modalColorGroup.style.display = '';
-                        // Set default selected
-                        setModalColor(selectedColor || colors[0]);
-                    } else {
-                        modalColorGroup.style.display = 'none';
-                    }
-                }
-
-                function setModalColor(color) {
-                    modalColorDropdownSelected.innerHTML = `<span class="shadcn-dropdown-swatch" style="background:${color};"></span> ${color}`;
-                    modalColorDropdownBtn.setAttribute('data-color', color);
-                    // Update modal image background
-                    modalImg.style.backgroundColor = color;
-                    // Mark active in dropdown
-                    modalColorDropdownList.querySelectorAll('.shadcn-dropdown-option').forEach(opt => {
-                        if (opt.getAttribute('data-color') === color) {
-                            opt.classList.add('active');
-                        } else {
-                            opt.classList.remove('active');
-                        }
-                    });
-                }
-
-                function getModalColor() {
-                    return modalColorDropdownBtn.getAttribute('data-color') || '';
-                }
-
-                function openDropdown() {
-                    modalColorDropdownList.style.display = 'block';
-                    modalColorDropdownBtn.setAttribute('aria-expanded', 'true');
-                }
-
-                function closeDropdown() {
-                    modalColorDropdownList.style.display = 'none';
-                    modalColorDropdownBtn.setAttribute('aria-expanded', 'false');
-                }
-
-                modalColorDropdownBtn.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    if (modalColorDropdownList.style.display === 'block') {
-                        closeDropdown();
-                    } else {
-                        openDropdown();
-                    }
-                });
-
-                document.addEventListener('click', function() {
-                    closeDropdown();
-                });
-
-                modalColorDropdownList.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                });
-
-                // Modal Add to Cart
-                document.querySelector('.modal-add-to-cart').addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation(); // Prevent scroll-to-top on modal button click
-                    const imgSrc = modalImg.src;
-                    const productTitle = modalTitle.textContent;
-                    const qty = parseInt(document.getElementById('modal-qty').value, 10) || 1;
-                    const color = getModalColor();
-                    addToCart({ title: productTitle, img: imgSrc, qty, color });
-                    closeModal();
-                });
-
-                // Modal Buy Now (optional: can be extended to use color)
-                document.querySelector('.modal-buy-now').addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation(); // Prevent scroll-to-top on modal button click
-                    const imgSrc = modalImg.src;
-                    const productTitle = modalTitle.textContent;
-                    const qty = parseInt(document.getElementById('modal-qty').value, 10) || 1;
-                    const color = getModalColor();
-                    addToCart({ title: productTitle, img: imgSrc, qty, color });
-                    closeModal();
-                    document.getElementById('cartModal').style.display = 'block';
-                    document.getElementById('buyNowModal').style.display = 'flex';
-                });
-
-                // --- Cart Logic ---
-                const cartBtn = document.getElementById('cartBtn');
-                const cartModal = document.getElementById('cartModal');
-                const cartModalOverlay = document.getElementById('cartModalOverlay');
-                const closeCartModal = document.getElementById('closeCartModal');
-                const cartItemsDiv = document.getElementById('cartItems');
-                const cartCount = document.getElementById('cartCount');
-                const cartEmptyMsg = document.getElementById('cartEmptyMsg');
-                let cart = [];
-
-                // --- Cart Persistence (localStorage) ---
-                // Load cart from localStorage on page load
-                function loadCart() {
-                    try {
-                        const saved = localStorage.getItem('knitwear_cart');
-                        if (saved) {
-                            cart = JSON.parse(saved);
-                        }
-                    } catch (e) {
-                        cart = [];
-                    }
-                }
-                // Save cart to localStorage whenever it changes
-                function saveCart() {
-                    localStorage.setItem('knitwear_cart', JSON.stringify(cart));
-                }
-
-                // Call loadCart on startup
-                loadCart();
-
-                // Show/hide cart modal with animation
-                function showCartModal() {
-                    cartModal.style.display = 'block';
-                    cartModalOverlay.style.display = 'block';
-                    cartModal.classList.add('visible');
-                    setTimeout(() => {
-                        cartModal.style.transform = 'translateX(0)';
-                        cartModal.style.opacity = '1';
-                        cartModalOverlay.style.opacity = '1';
-                    }, 10);
-                }
-                function hideCartModal() {
-                    cartModal.style.transform = 'translateX(100%)';
-                    cartModal.style.opacity = '0';
-                    cartModalOverlay.style.opacity = '0';
-                    cartModal.classList.remove('visible');
-                    setTimeout(() => {
-                        cartModal.style.display = 'none';
-                        cartModalOverlay.style.display = 'none';
-                    }, 300);
-                }
-
-                cartBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    showCartModal();
-                });
-
-                // Add touch event handling for mobile
-                cartBtn.addEventListener('touchstart', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    showCartModal();
-                }, { passive: false });
-
-                closeCartModal.addEventListener('click', function() {
-                    hideCartModal();
-                });
-                cartModalOverlay.addEventListener('click', function() {
-                    hideCartModal();
-                });
-                document.addEventListener('keydown', function(e) {
-                    if (cartModal.style.display === 'block' && (e.key === 'Escape' || e.keyCode === 27)) {
-                        hideCartModal();
-                    }
-                });
-                cartModal.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                });
-
-                function addToCart(item) {
-                    const key = cartKey(item.title, item.img, item.color);
-                    const idx = cart.findIndex(i => cartKey(i.title, i.img, i.color) === key);
-                    if (idx > -1) {
-                        cart[idx].qty += item.qty;
-                    } else {
-                        cart.push({ ...item });
-                    }
-                    updateCartUI();
-                    saveCart();
-                }
-
-                function updateCartUI() {
-                    // Make sure cart is defined
-                    if (typeof cart === 'undefined' || cart === null) {
-                        cart = [];
-                    }
-                    
-                    // Double check localStorage hasn't been changed
-                    const storedCart = localStorage.getItem('knitwear_cart');
-                    if (storedCart === null) {
-                        cart = [];
-                    }
-                    
-                    let totalQty = cart.reduce((sum, i) => sum + i.qty, 0);
-                    cartCount.textContent = totalQty;
-                    cartCount.style.display = totalQty > 0 ? 'block' : 'none';
-                    
-                    // Update Buy Now button state
-                    const cartBuyNowBtn = document.getElementById('cartBuyNowBtn');
-                    if (cartBuyNowBtn) {
-                        if (cart.length === 0) {
-                            cartBuyNowBtn.disabled = true;
-                            cartBuyNowBtn.style.opacity = '0.5';
-                            cartBuyNowBtn.style.cursor = 'not-allowed';
-                        } else {
-                            cartBuyNowBtn.disabled = false;
-                            cartBuyNowBtn.style.opacity = '1';
-                            cartBuyNowBtn.style.cursor = 'pointer';
-                        }
-                    }
-
-                    if (cart.length === 0) {
-                        cartItemsDiv.innerHTML = '<div style="color:#888;text-align:center;margin-top:30px;margin-left:30px ;" id="cartEmptyMsg">Your cart is empty.</div>';
-                        saveCart();
-                        return;
-                    }
-                    cartItemsDiv.innerHTML = '';
-                    cart.forEach((item, idx) => {
-                        const div = document.createElement('div');
-                        div.style = 'display:flex;align-items:center;margin-bottom:18px;border-bottom:1px solid #eee;padding-bottom:10px;';
-                        div.innerHTML = `
-                            <img src="${item.img}" alt="" style="width:54px;height:54px;object-fit:cover;border-radius:8px;margin-right:12px;background:#f2f2f2;">
-                            <div style="flex:1;">
-                                <div style="font-weight:600;font-size:1em;">${item.title}</div>
-                                <div style="font-size:0.97em;color:#555;">Qty: ${item.qty}</div>
-                                ${item.color ? `<div style="font-size:0.95em;color:#888;">Color: <span style="display:inline-block;width:16px;height:16px;border-radius:50%;background:${item.color};border:1px solid #ccc;vertical-align:middle;margin-right:4px;"></span>${item.color}</div>` : ''}
-                            </div>
-                            <button data-idx="${idx}" style="background:none;border:none;color:#e74c3c;font-size:1.2em;cursor:pointer;margin-right:16px;" title="Remove">&times;</button>
-                        `;
-                        cartItemsDiv.appendChild(div);
-                    });
-                    cartItemsDiv.querySelectorAll('button[data-idx]').forEach(btn => {
-                        btn.addEventListener('click', function() {
-                            const idx = parseInt(this.getAttribute('data-idx'), 10);
-                            cart.splice(idx, 1);
-                            updateCartUI();
-                            saveCart();
-                        });
-                    });
-                    saveCart();
-                }
-
-                // After loading cart, update UI
-                updateCartUI();
-
-                // --- Modal Open/Close Logic ---
-                function openModal(imgSrc, title, fromGallery = false) {
-                    const qtyInput = document.getElementById('modal-qty');
-                    modalImg.src = imgSrc;
-                    modalTitle.textContent = title;
-                    qtyInput.value = 1;
-                    // Setup color dropdown
-                    setupModalColors();
-                    // Set default color and update image background
-                    // (handled in setupModalColors)
-                    const fallback = modal.querySelector('.modal-img-fallback');
-                    if (fallback) fallback.remove();
-                    const preloader = document.querySelector('.mfp-preloader');
-                    if (preloader) preloader.remove();
-                    modalImg.style.display = '';
-                    modal.style.display = 'flex';
-                    // Prevent background scroll
-                    document.body.classList.add('modal-open');
-                }
-
-                function closeModal() {
-                    const scrollY = parseInt(document.body.style.top || '0');
-                    modal.style.display = 'none';
-                    document.body.classList.remove('modal-open');
-                    document.body.style.top = '';
-                    // Restore scroll position
-                    window.scrollTo(0, Math.abs(scrollY));
-                }
-
-                const qtyInput = document.getElementById('modal-qty');
-                const qtyBtns = document.querySelectorAll('.modal-qty-btn');
-                qtyBtns[0].addEventListener('click', function() {
-                    let val = parseInt(qtyInput.value, 10) || 1;
-                    if (val > 1) qtyInput.value = val - 1;
-                });
-                qtyBtns[1].addEventListener('click', function() {
-                    let val = parseInt(qtyInput.value, 10) || 1;
-                    qtyInput.value = val + 1;
-                });
-                qtyInput.addEventListener('input', function() {
-                    if (this.value < 1) this.value = 1;
-                });
-
-                // Add Buy Now button logic for cart
-                document.getElementById('cartBuyNowBtn').addEventListener('click', function() {
-                    // Only open modal if cart has items
-                    if (cart.length === 0) {
-                        alert("Your cart is empty. Please add items before placing an order.");
-                        return;
-                    }
-                    document.getElementById('buyNowModal').style.display = 'flex';
-                });
-
-                // Buy Now Modal logic
-                document.getElementById('closeBuyNowModal').addEventListener('click', function() {
-                    document.getElementById('buyNowModal').style.display = 'none';
-                });
-                document.getElementById('buyNowModal').addEventListener('click', function(e) {
-                    if (e.target === this) this.style.display = 'none';
-                });
-
-                // --- Clear cart on Buy Now Submit ---
-                document.getElementById('buyNowForm').addEventListener('submit', function (e) {
-                  e.preventDefault();
-                  console.log('buyNowForm submit event triggered'); // Debug: Submit triggered
-
-                  let cart = JSON.parse(localStorage.getItem('knitwear_cart') || '[]');
-                  
-                  // Prevent submission if cart is empty
-                  if (!cart || cart.length === 0) {
-                    alert("Your cart is empty. Please add items before placing an order.");
-                    return;
-                  }
-
-                  // --- Add image field for each cart item if not present ---
-                  cart = cart.map(item => ({
-                    ...item,
-                    image: item.img || item.image // ensure 'image' field is present for server
-                  }));
-
-                  const buyerData = {
-                    name: this.buyerName.value.trim(),
-                    email: this.buyerEmail.value.trim(),
-                    phone: this.buyerPhone.value.trim(),
-                    address: this.buyerAddress.value.trim(),
-                    cart: cart
-                  };
-                  console.log('Sending order data:', buyerData); // Debug log
-
-                  if (!buyerData.name || !buyerData.email || !buyerData.phone || !buyerData.address) {
-                    alert("Please fill out all required fields.");
-                    return;
-                  }
-
-                  // Show loading indicator
-                  const submitBtn = document.getElementById('buyNowSubmitBtn');
-                  const loader = document.getElementById('buyNowLoader');
-                  if (submitBtn && loader) {
-                    submitBtn.disabled = true;
-                    loader.style.display = 'inline-block';
-                  }
-
-                  fetch('http://localhost:3001/send-email', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(buyerData)
-                  })
-                  .then(res => {
-                    // Log response status for debugging
-                    console.log('Response status:', res.status);
-                    return res.json();
-                  })
-                  .then(data => {
-                    console.log('Response data:', data); // Log the complete response for debugging
-                    if (data && data.success) {
-                      // Clear cart properly with multiple approaches for redundancy
-                      localStorage.removeItem('knitwear_cart');
-                      cart = [];
-                      window.cart = [];
-                      
-                      // Reset cart count and update cart UI
-                      document.getElementById('cartCount').textContent = '0';
-                      document.getElementById('cartCount').style.display = 'none';
-                      
-                      // Clear cart items display
-                      const cartItemsDiv = document.getElementById('cartItems');
-                      if (cartItemsDiv) {
-                        cartItemsDiv.innerHTML = '<div style="color:#888;text-align:center;margin-top:30px;margin-left:30px ;" id="cartEmptyMsg">Your cart is empty.</div>';
-                      }
-                      
-                      // Disable buy now button
-                      const cartBuyNowBtn = document.getElementById('cartBuyNowBtn');
-                      if (cartBuyNowBtn) {
-                        cartBuyNowBtn.disabled = true;
-                        cartBuyNowBtn.style.opacity = '0.5';
-                        cartBuyNowBtn.style.cursor = 'not-allowed';
-                      }
-                      
-                      updateCartUI(); // Update UI to reflect empty cart
-                      // Ensure the cart is really empty
-                      setTimeout(() => {
-                        localStorage.removeItem('knitwear_cart');
-                        updateCartUI();
-                      }, 100);
-                      
-                      alert("Thank you! Your order has been submitted.");
-                      buyNowForm.reset();
-                      document.getElementById('buyNowModal').style.display = 'none';
-                      hideCartModal(); // Make sure to close the cart modal too
-                    } else {
-                      alert(data?.message || "Failed to send order. Please try again.");
-                    }
-                  })
-                  .catch(function(error) {
-                    console.error("Email sending failed:", error);
-                    alert("Failed to send order. Please try again. Error: " + error.message);
-                  })
-                  .finally(() => {
-                    // Hide loading indicator
-                    if (submitBtn && loader) {
-                      submitBtn.disabled = false;
-                      loader.style.display = 'none';
-                    }
-                  });
-                });
-            });
-        </script>
-
-            </div>
-        </section>
-        <!-- ****** Gallery Area End ****** -->
-
-    <!-- Modal HTML -->
-    <div id="productModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); align-items:center; justify-content:center;">
-        <div style="background:#fff; border-radius:8px; max-width:950px; width:90vw; display:flex; flex-direction:row; overflow:hidden; position:relative;">
-            <span class="modal-close" style="position:absolute; top:10px; right:20px; font-size:2rem; cursor:pointer;">&times;</span>
+    <!-- Product Modal -->
+    <div id="productModal" class="" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); align-items:center; justify-content:center;">
+        <div class="modal-content" style="background:#fff; border-radius:12px; max-width:900px; width:90vw; display:flex; flex-direction:row; overflow:hidden; position:relative;">
+            <span class="modal-close" style="position:absolute; top:15px; right:15px; font-size:1.8rem; color:#666; cursor:pointer; z-index:1;">&times;</span>
             <div style="flex:1; display:flex; align-items:center; justify-content:center; margin-left:5%">
                 <img class="modal-product-img" src="" alt="Product" style="max-width:300px; max-height:400px; border-radius:8px; background:transparent; transition:background 0.3s;">
             </div>
-            <div style="flex:1; padding:32px 24px; display:flex; flex-direction:column; justify-content:center;">
+            <div class="modal-product-details" style="flex:1; padding:32px 24px; display:flex; flex-direction:column; justify-content:center;">
                 <h3 class="modal-product-title" style="margin-bottom:16px;"></h3>
-                <!-- Color Dropdown (conditional, shadcn style) -->
-                <div id="modal-color-group" style="margin-bottom:16px; display:none;">
-                    <strong>Choose Color:</strong>
-                    <div id="modal-color-dropdown" class="shadcn-dropdown">
-                        <button id="modal-color-dropdown-btn" class="shadcn-dropdown-btn" type="button">
-                            <span id="modal-color-dropdown-selected" class="shadcn-dropdown-selected"></span>
-                            <svg width="18" height="18" style="margin-left:8px;" viewBox="0 0 20 20"><path d="M7 7l3 3 3-3" stroke="#333" stroke-width="2" fill="none" fill-rule="evenodd"/></svg>
-                        </button>
-                        <div id="modal-color-dropdown-list" class="shadcn-dropdown-list" style="display:none;"></div>
-                    </div>
-                </div>
+                <div class="modal-product-description" style="margin-bottom:18px;"></div>
                 <!-- Quantity Selector -->
-                <div class="modal-qty-group" style="margin-bottom:18px; display:flex; align-items:center; gap:10px;">
-                    <label for="modal-qty" style="font-weight:500;">Quantity:</label>
-                    <div class="modal-qty-wrapper" style="display:flex; align-items:center; gap:0;">
-                        <button type="button" class="modal-qty-btn" style="width:32px; height:32px; border:none; background:#f2f2f2; font-size:1.2em; border-radius:6px 0 0 6px; cursor:pointer;">-</button>
-                        <input id="modal-qty" class="modal-qty-input" type="number" min="1" value="1" style="width:48px; text-align:center; border:1px solid #ddd; border-left:none; border-right:none; height:32px; font-size:1em;">
-                        <button type="button" class="modal-qty-btn" style="width:32px; height:32px; border:none; background:#f2f2f2; font-size:1.2em; border-radius:0 6px 6px 0; cursor:pointer;">+</button>
-                    </div>
+                <div class="quantity-controls" style="display:flex; align-items:center; gap:15px; margin-bottom:25px;">
+                    <button type="button" class="modal-qty-btn quantity-btn">-</button>
+                    <input id="quantity" class="modal-qty-input" type="number" min="1" value="1" style="width:60px; text-align:center; border:1px solid #ddd; border-radius:8px; height:36px; font-size:1rem;">
+                    <button type="button" class="modal-qty-btn quantity-btn">+</button>
                 </div>
                 <div style="display:flex; gap:12px;">
-                    <button class="modal-add-to-cart btn btn-primary">
-                        <span class="cart-icon">🛒</span>Add to Cart
-                    </button>
+                    <button class="modal-add-to-cart btn btn-primary"><span class="cart-icon">🛒</span>Add to Cart</button>
                     <button class="modal-buy-now btn btn-success">Buy Now</button>
                 </div>
             </div>
@@ -2959,23 +1190,15 @@
 
     <!-- ***** Footer Area Start ***** -->
     <footer class="footer-area">
-        <!-- back end content -->
         <div class="backEnd-content">
             <img class="dots" src="img/core-img/dots.png" alt="">
             <h2>Dream</h2>
         </div>
-
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <!-- Copywrite Text -->
-                    <div class="copywrite-text"></div>
-                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;
-                            <script>document.write(new Date().getFullYear());</script> All rights reserved | Ganeshdeep
-                            Knitwear
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
+                    <div class="copywrite-text">
+                        <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | Ganeshdeep Knitwear</p>
                     </div>
                 </div>
             </div>
@@ -2983,17 +1206,18 @@
     </footer>
     <!-- ***** Footer Area End ***** -->
 
-        <!-- jQuery (Necessary for All JavaScript Plugins) -->
-        <script src="js/jquery/jquery-2.2.4.min.js" defer></script>
-        <!-- Popper js -->
-        <script src="js/popper.min.js" defer></script>
-        <!-- Bootstrap js -->
-        <script src="js/bootstrap.min.js" defer></script>
-        <!-- Plugins js -->
-        <script src="js/plugins.js" defer></script>
-        <!-- Active js -->
-        <script src="js/active.js" defer></script>
-        <script src="mail.js" defer></script>
-    </body>
-
+    <!-- Scripts -->
+    <script src="js/jquery/jquery-2.2.4.min.js" defer></script>
+    <script src="js/popper.min.js" defer></script>
+    <script src="js/bootstrap.min.js" defer></script>
+    <script src="js/plugins.js" defer></script>
+    <script src="js/active.js" defer></script>
+    <script src="mail.js" defer></script>
+    <!-- Modern JS Modules -->
+    <script type="module" src="js/supabase-config.js"></script>
+    <script type="module" src="js/cart.js"></script>
+    <script type="module" src="js/product-modal.js"></script>
+    <script type="module" src="js/buy-now.js"></script>
+    <script type="module" src="js/products.js"></script>
+</body>
 </html>
